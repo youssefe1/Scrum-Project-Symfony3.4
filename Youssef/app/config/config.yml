@@ -5,6 +5,7 @@ imports:
     - { resource: "@EntitiesBundle/Resources/config/services.yml" }
     - { resource: "@MeetingBundle/Resources/config/services.yml" }
     - { resource: "@ForumBundle/Resources/config/services.yml" }
+    - { resource: "@RhBundle/Resources/config/services.yml" }
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
@@ -100,5 +101,5 @@ fos_message:
     message_class: EntitiesBundle\Entity\Message
 
 doc_doc_doc_nexmo:
-    api_key: 
-    api_secret: 
+    api_key: 4ee3bf6f
+    api_secret: xZhlD1B5d7f5sbDN

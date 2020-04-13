@@ -24,7 +24,7 @@ class Absence
     /**
      * @var string
      *
-     * @ORM\Column(name="date", type="string", length=100, nullable=false)
+     * @ORM\Column(name="date", type="date", length=100, nullable=false)
      */
     private $date;
 
@@ -51,6 +51,88 @@ class Absence
      * })
      */
     private $ideUser;
+
+    /**
+     * @return int
+     */
+    public function getIdAbsence()
+    {
+        return $this->idAbsence;
+    }
+
+    /**
+     * @param int $idAbsence
+     */
+    public function setIdAbsence($idAbsence)
+    {
+        $this->idAbsence = $idAbsence;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param string $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHeure()
+    {
+        return $this->heure;
+    }
+
+    /**
+     * @param string $heure
+     */
+    public function setHeure($heure)
+    {
+        $this->heure = $heure;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNbre()
+    {
+        return $this->nbre;
+    }
+
+    /**
+     * @param int $nbre
+     */
+    public function setNbre($nbre)
+    {
+        $this->nbre = $nbre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdeUser()
+    {
+        return $this->ideUser;
+    }
+
+    /**
+     * @param \User $ideUser
+     */
+    public function setIdeUser($ideUser)
+    {
+        $this->ideUser = $ideUser;
+    }
+
+
 
 
 }

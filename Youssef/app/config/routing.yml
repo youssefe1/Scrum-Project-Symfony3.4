@@ -1,3 +1,7 @@
+rh:
+    resource: "@RhBundle/Resources/config/routing.yml"
+    prefix:   /rh
+
 forum:
     resource: "@ForumBundle/Resources/config/routing.yml"
     prefix:   /Forum

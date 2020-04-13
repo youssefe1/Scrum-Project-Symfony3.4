@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Conge
  *
- * @ORM\Table(name="conge", indexes={@ORM\Index(name="ide_user", columns={"ide_user"})})
+ * @ORM\Table(name="conge", indexes={@ORM\Index(name="ide_dconge", columns={"ide_dconge"})})
  * @ORM\Entity
  */
 class Conge
@@ -21,19 +21,9 @@ class Conge
      */
     private $idConge;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="date_debut", type="string", length=200, nullable=false)
-     */
-    private $dateDebut;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="date_fin", type="string", length=200, nullable=false)
-     */
-    private $dateFin;
+
+
 
     /**
      * @var string
@@ -43,14 +33,64 @@ class Conge
     private $description;
 
     /**
-     * @var \User
+     * @var \DemandeConge
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="DemandeConge")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="ide_user", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="ide_dconge", referencedColumnName="id_dconge")
      * })
      */
-    private $ideUser;
+    private $ideDconge;
+
+    /**
+     * @return int
+     */
+    public function getIdConge()
+    {
+        return $this->idConge;
+    }
+
+    /**
+     * @param int $idConge
+     */
+    public function setIdConge($idConge)
+    {
+        $this->idConge = $idConge;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return \DemandeConge
+     */
+    public function getIdeDconge()
+    {
+        return $this->ideDconge;
+    }
+
+    /**
+     * @param \DemandeConge $ideDconge
+     */
+    public function setIdeDconge($ideDconge)
+    {
+        $this->ideDconge = $ideDconge;
+    }
+
+
 
 
 }

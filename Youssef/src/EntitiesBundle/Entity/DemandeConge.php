@@ -43,7 +43,7 @@ class DemandeConge
     private $raison;
 
     /**
-     * @var \FosUser
+     * @var User
      *
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumns({
@@ -51,6 +51,86 @@ class DemandeConge
      * })
      */
     private $ideUser;
+
+    /**
+     * @return int
+     */
+    public function getIdDconge()
+    {
+        return $this->idDconge;
+    }
+
+    /**
+     * @param int $idDconge
+     */
+    public function setIdDconge($idDconge)
+    {
+        $this->idDconge = $idDconge;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateDebut()
+    {
+        return $this->dateDebut;
+    }
+
+    /**
+     * @param \DateTime $dateDebut
+     */
+    public function setDateDebut($dateDebut)
+    {
+        $this->dateDebut = $dateDebut;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateFin()
+    {
+        return $this->dateFin;
+    }
+
+    /**
+     * @param \DateTime $dateFin
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->dateFin = $dateFin;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRaison()
+    {
+        return $this->raison;
+    }
+
+    /**
+     * @param string $raison
+     */
+    public function setRaison($raison)
+    {
+        $this->raison = $raison;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdeUser()
+    {
+        return $this->ideUser;
+    }
+
+    /**
+     * @param \User $ideUser
+     */
+    public function setIdeUser($ideUser)
+    {
+        $this->ideUser = $ideUser;
+    }
 
 
 }

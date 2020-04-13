@@ -26,7 +26,7 @@ class AppKernel extends Kernel
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
             new DocDocDoc\NexmoBundle\DocDocDocNexmoBundle(),
-
+            new RhBundle\RhBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
