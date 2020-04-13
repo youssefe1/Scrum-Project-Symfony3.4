@@ -100,5 +100,5 @@ fos_message:
     message_class: EntitiesBundle\Entity\Message
 
 doc_doc_doc_nexmo:
-    api_key: 4ee3bf6f
-    api_secret: xZhlD1B5d7f5sbDN
+    api_key: 
+    api_secret: 
