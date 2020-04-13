@@ -111,18 +111,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/RhBundle/Resources/views/Default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/EntitiesBundle/Entity" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Youssef\src\EntitiesBundle\Entity" />
+      <recent name="C:\wamp64\www\Youssef\src\EntitiesBundle\Form" />
+      <recent name="C:\wamp64\www\Youssef\src\BSBundle\Resources\views" />
+      <recent name="C:\wamp64\www\Youssef\src\BSBundle\Controller" />
       <recent name="C:\wamp64\www\Youssef\src\RhBundle\Resources\views\Default" />
-      <recent name="C:\wamp64\www\Youssef\src\EntitiesBundle\Repository" />
-      <recent name="C:\wamp64\www\Youssef\src\MeetingBundle\Resources\views\ScrumBoard" />
-      <recent name="C:\wamp64\www\Youssef\src\MeetingBundle\Resources\views\tache" />
-      <recent name="C:\wamp64\www\Youssef\src\MeetingBundle\Controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Youssef\src\RhBundle\Resources\views\absence" />
@@ -135,7 +135,6 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value=" php bin/console doctrine:mapping:import &quot;Entities\Entity&quot; annotation --path=src/Entity " />
-      <command value=" php bin/console doctrine:mapping:import &quot;Entities\Entity&quot; yml --path=src/Entity " />
       <command value="php bin/console doctrine:mapping:import &quot;Entities\Entity&quot; annotation --path=src/Entity" />
       <command value="php -d memory_limit=-1 bin/console cache:clear" />
       <command value="c require friendsofsymfony/user-bundle " />
@@ -181,13 +180,14 @@
       <command value="s cache:clear" />
       <command value="s doctrine:generate:form EntitiesBundle:SprintRetrospective" />
       <command value="s doctrine:generate:form EntitiesBundle:Tache" />
-      <command value="s doctrine:migrations:diff" />
-      <command value="s doctrine:schema:update --force" />
-      <command value="s generate:bundle" />
       <command value="s doctrine:generate:form EntitiesBundle:Absence" />
       <command value="s server:run" />
       <command value="s doctrine:generate:form EntitiesBundle:Conge" />
       <command value="s doctrine:generate:form EntitiesBundle:DemandeConge" />
+      <command value="s generate:bundle" />
+      <command value="s doctrine:migrations:diff" />
+      <command value="s doctrine:schema:update --force" />
+      <command value=" php bin/console doctrine:mapping:import &quot;Entities\Entity&quot; yml --path=src/Entity " />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -273,7 +273,7 @@
       <workItem from="1586698278828" duration="5857000" />
       <workItem from="1586770945588" duration="7657000" />
       <workItem from="1586785954042" duration="295000" />
-      <workItem from="1586797414941" duration="5351000" />
+      <workItem from="1586797414941" duration="12072000" />
     </task>
     <servers />
   </component>
@@ -323,11 +323,11 @@
     <state x="684" y="400" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584643110791" />
     <state x="684" y="402" key="ComposerCompositePathDialog/0.0.1920.1046/-1600.7.1280.680@0.0.1920.1046" timestamp="1584124535031" />
     <state x="684" y="402" key="ComposerCompositePathDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1583576639213" />
-    <state x="-984" y="219" key="FileChooserDialogImpl" timestamp="1586786008965">
-      <screen x="-1600" y="0" width="1600" height="866" />
+    <state x="739" y="265" key="FileChooserDialogImpl" timestamp="1586806601195">
+      <screen x="0" y="0" width="1920" height="1046" />
     </state>
     <state x="-984" y="219" key="FileChooserDialogImpl/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586786008965" />
-    <state x="739" y="265" key="FileChooserDialogImpl/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586698556340" />
+    <state x="739" y="265" key="FileChooserDialogImpl/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586806601195" />
     <state x="521" y="234" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584971315478" />
     <state x="739" y="265" key="FileChooserDialogImpl/0.0.1920.1046/-1600.7.1280.680@0.0.1920.1046" timestamp="1584139408448" />
     <state x="739" y="265" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1583576669431" />
@@ -335,35 +335,35 @@
       <screen x="-1600" y="0" width="1600" height="866" />
     </state>
     <state x="-859" y="390" key="FrameworkEditDialogDimensionKey/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1585323903355" />
-    <state width="1877" height="118" key="GridCell.Tab.0.bottom" timestamp="1586800557590">
+    <state width="1877" height="118" key="GridCell.Tab.0.bottom" timestamp="1586811956654">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
-    <state width="936" height="155" key="GridCell.Tab.0.bottom/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586782744634" />
-    <state width="1877" height="118" key="GridCell.Tab.0.bottom/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586800557590" />
+    <state width="1557" height="118" key="GridCell.Tab.0.bottom/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586806655665" />
+    <state width="1877" height="118" key="GridCell.Tab.0.bottom/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586811956654" />
     <state width="1811" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585341462406" />
     <state width="1877" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1046/-1600.7.1280.680@0.0.1920.1046" timestamp="1584140711031" />
     <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1046@0.0.1920.1046" timestamp="1584103599281" />
-    <state width="1877" height="118" key="GridCell.Tab.0.center" timestamp="1586800557590">
+    <state width="1877" height="118" key="GridCell.Tab.0.center" timestamp="1586811956654">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
-    <state width="936" height="155" key="GridCell.Tab.0.center/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586782744634" />
-    <state width="1877" height="118" key="GridCell.Tab.0.center/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586800557590" />
+    <state width="1557" height="118" key="GridCell.Tab.0.center/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586806655665" />
+    <state width="1877" height="118" key="GridCell.Tab.0.center/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586811956654" />
     <state width="1811" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585341462406" />
     <state width="1877" height="266" key="GridCell.Tab.0.center/0.0.1920.1046/-1600.7.1280.680@0.0.1920.1046" timestamp="1584140711031" />
     <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1920.1046@0.0.1920.1046" timestamp="1584103599280" />
-    <state width="1877" height="118" key="GridCell.Tab.0.left" timestamp="1586800557590">
+    <state width="1877" height="118" key="GridCell.Tab.0.left" timestamp="1586811956654">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
-    <state width="936" height="155" key="GridCell.Tab.0.left/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586782744634" />
-    <state width="1877" height="118" key="GridCell.Tab.0.left/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586800557590" />
+    <state width="1557" height="118" key="GridCell.Tab.0.left/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586806655665" />
+    <state width="1877" height="118" key="GridCell.Tab.0.left/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586811956654" />
     <state width="1811" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585341462406" />
     <state width="1877" height="266" key="GridCell.Tab.0.left/0.0.1920.1046/-1600.7.1280.680@0.0.1920.1046" timestamp="1584140711031" />
     <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1920.1046@0.0.1920.1046" timestamp="1584103599280" />
-    <state width="1877" height="118" key="GridCell.Tab.0.right" timestamp="1586800557590">
+    <state width="1877" height="118" key="GridCell.Tab.0.right" timestamp="1586811956654">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
-    <state width="936" height="155" key="GridCell.Tab.0.right/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586782744634" />
-    <state width="1877" height="118" key="GridCell.Tab.0.right/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586800557590" />
+    <state width="1557" height="118" key="GridCell.Tab.0.right/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586806655665" />
+    <state width="1877" height="118" key="GridCell.Tab.0.right/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586811956654" />
     <state width="1811" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585341462406" />
     <state width="1877" height="266" key="GridCell.Tab.0.right/0.0.1920.1046/-1600.7.1280.680@0.0.1920.1046" timestamp="1584140711031" />
     <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1920.1046@0.0.1920.1046" timestamp="1584103599280" />
@@ -404,11 +404,11 @@
       <screen x="-1600" y="0" width="1600" height="866" />
     </state>
     <state x="-1159" y="156" width="700" height="530" key="recent.locations.popup/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1585673498893" />
-    <state x="700" y="242" width="672" height="678" key="run.anything.popup" timestamp="1586800701431">
+    <state x="700" y="242" width="672" height="678" key="run.anything.popup" timestamp="1586810066918">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
-    <state x="-1017" y="200" width="672" height="562" key="run.anything.popup/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586451176240" />
-    <state x="700" y="242" width="672" height="678" key="run.anything.popup/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586800701431" />
+    <state x="-1017" y="200" width="672" height="562" key="run.anything.popup/-1600.0.1600.866/0.0.1920.1046@-1600.0.1600.866" timestamp="1586806655679" />
+    <state x="700" y="242" width="672" height="678" key="run.anything.popup/-1600.0.1600.866/0.0.1920.1046@0.0.1920.1046" timestamp="1586810066918" />
     <state x="700" y="241" width="672" height="674" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585346565963" />
     <state x="700" y="242" width="672" height="677" key="run.anything.popup/0.0.1920.1046/-1600.7.1280.680@0.0.1920.1046" timestamp="1584138772808" />
     <state x="700" y="242" width="672" height="677" key="run.anything.popup/0.0.1920.1046@0.0.1920.1046" timestamp="1584103599304" />

@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+
 {% block head %}
+    <!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,10 +20,17 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/extensions/unslider.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/weather-icons/climacons.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/datatable/datatables.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/extensions/responsive.dataTables.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/extensions/buttons.dataTables.min.csss') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css') }}">
     <!-- END VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/extensions/nouislider.min.css') }}">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/menu/menu-types/vertical-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/colors/palette-gradient.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/plugins/extensions/noui-slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/colors/palette-noui.css') }}">
     <!-- BEGIN ROBUST CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/app.css') }}">
     <!-- END ROBUST CSS-->
@@ -32,22 +40,21 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/colors/palette-gradient.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/plugins/calendars/clndr.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/fonts/meteocons/style.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/core/menu/menu-types/horizontal-menu.css') }}">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('back/assets/css/style.css') }}">
     <!-- END Custom CSS-->
 </head>
-{% endblock %}
-
-
 <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-col="2-columns">
-{% block navbar %}
+
+<!-- fixed-top-->
 <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-dark navbar-shadow">
     <div class="navbar-wrapper">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
-                <li class="nav-item"><a class="navbar-brand" href="{{ path('homepage') }}"><img class="brand-logo" alt="robust admin logo" src="{{ asset('back/app-assets/images/logo.png') }}">                        <h4 class="brand-text">WEMANAGE</h4></a></li>
+                <li class="nav-item"><a class="navbar-brand" href="#"><img class="brand-logo" alt="robust admin logo" src="{{ asset('back/app-assets/images/logo.png') }}">                        <h4 class="brand-text">WEMANAGE Admin</h4></a></li>
                 <li class="nav-item d-md-none"><a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a></li>
             </ul>
         </div>
@@ -155,17 +162,15 @@
                             <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all messages</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                            <span class="avatar avatar-online">
-                                <img src="{{asset('uploads/images/'  ~ app.user.ImageUser) }}" alt="avatar"><i></i></span>
-                            <span class="user-name">{{ app.user.username }}</span></a>
+                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="avatar avatar-online"><img src="{{ asset('back/app-assets/images/portrait/small/av.png') }}" alt="avatar"><i></i></span>{{ app.user.username }}<span class="user-name"></span></a>
+
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{ path('fos_user_profile_edit') }}"><i class="ft-user"></i> Edit Profile</a>
-                            <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}"><i class="ft-user"></i> Profile</a>
-                            <a class="dropdown-item" href="{{ path('fos_message_inbox') }}"><i class="ft-mail"></i> My Inbox</a>
-                            <a class="dropdown-item" href="user-cards.html"><i class="ft-check-square"></i> Task</a>
-                            <a class="dropdown-item" href="{{ path('fos_message_sent') }}"><i class="ft-message-square"></i> Chats</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class="ft-power"></i> Logout</a>
-                        </div>
+                                <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}"><i class="ft-user"></i> Profile</a>
+                                <a class="dropdown-item" href="email-application.html"><i class="ft-mail"></i> My Inbox</a>
+                                <a class="dropdown-item" href="user-cards.html"><i class="ft-check-square"></i> Task</a>
+                                <a class="dropdown-item" href="chat-application.html"><i class="ft-message-square"></i> Chats</a>
+                                <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class="ft-power"></i> Logout</a>
+                            </div>
                     </li>
                 </ul>
             </div>
@@ -173,136 +178,39 @@
     </div>
 </nav>
 {% endblock %}
+<!-- ////////////////////////////////////////////////////////////////////////////-->
 
 {% block sidebar %}
     <div class="main-menu menu-fixed menu-dark menu-accordion    menu-shadow " data-scroll-to-active="true">
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                {% if is_granted('ROLE_ADMIN') %}
+                <li class=" nav-item"><a href="index.html"><i class="icon-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
 
-                    <li class=" nav-item"><a href="{{ path('homepage') }}"><i class="icon-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{ path('Sprintv')}}"><i class="icon-film"></i><span class="menu-title" data-i18n="nav.users.main">Sprint</span></a>
 
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-user"></i><span class="menu-title" data-i18n="nav.users.main">Users</span></a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="user-profile.html" data-i18n="nav.users.user_profile">Users Profile</a>
-                            </li>
-                            <li><a class="menu-item" href="user-cards.html" data-i18n="nav.users.user_cards">Users Cards</a>
-                            </li>
-                            <li><a class="menu-item" href="{{ path('ajout') }}" data-i18n="nav.users.users_contacts">Users List</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-briefcase"></i><span class="menu-title" data-i18n="nav.project.main">Project</span></a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="project-summary.html" data-i18n="nav.project.project_summary">Project Summary</a>
-                            </li>
-                            <li><a class="menu-item" href="project-tasks.html" data-i18n="nav.project.project_tasks">Project Task</a>
-                            </li>
-                            <li><a class="menu-item" href="project-bugs.html" data-i18n="nav.project.project_bugs">Project Bugs</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-user"></i><span class="menu-title" data-i18n="nav.templates.main">Team</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{ path('user_story')}}"><i class="icon-briefcase"></i><span class="menu-title" data-i18n="nav.project.main">User Story</span></a>
 
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-screen-tablet"></i><span class="menu-title" data-i18n="nav.templates.main">BacklogProduct</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{ path('aff_tache')}}"><i class="icon-screen-tablet"></i><span class="menu-title" data-i18n="nav.templates.main">Tache</span></a>
 
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('test-bs')}}"><i class="icon-layers"></i><span class="menu-title" data-i18n="nav.page_layouts.main">BacklogSprint</span></a>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-note"></i><span class="menu-title" data-i18n="nav.templates.main">Tableau Blanc</span></a>
 
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-list"></i><span class="menu-title" data-i18n="nav.navbars.main">Conge</span></a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="{{ path('affdemande') }}" data-i18n="nav.project.project_summary">Liste des Demandes</a>
-                            </li>
-                            <li><a class="menu-item" href="{{ path('afficherc') }}" data-i18n="nav.project.project_tasks">Les demandes traitées</a>
-                            </li>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-book-open"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Sprint Review</span></a>
 
-                        </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-share-alt"></i><span class="menu-title" data-i18n="nav.navbars.main">Sprint Retrospective</span></a>
 
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('Afficherab') }}"><i class="icon-info"></i><span class="menu-title" data-i18n="nav.page_headers.main">Absence</span></a>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-graph"></i><span class="menu-title" data-i18n="nav.page_headers.main">BurndpwnChart</span></a>
 
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-notebook"></i><span class="menu-title" data-i18n="nav.vertical_nav.main">Documents</span></a>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="icon-notebook"></i><span class="menu-title" data-i18n="nav.vertical_nav.main">Documents</span></a>
 
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-docs"></i><span class="menu-title" data-i18n="nav.horz_nav.main">Intervention</span></a>
-
-                    </li>
-
-                    <li class=" nav-item"><a href="#"><i class="icon-refresh spinner"></i><span class="menu-title" data-i18n="nav.footers.main">Services</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-bubbles"></i><span class="menu-title" data-i18n="nav.project.main">Forum</span></a>
-                        <ul class="menu-content">
-                            <li><a class="menu-item" href="{{ path('forum_homepage') }}" data-i18n="nav.project.project_summary">Forum</a>
-                            </li>
-                            <li><a class="menu-item" href="{{ path('graphePie') }}" data-i18n="nav.project.project_tasks">Stats</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-pencil"></i><span class="menu-title" data-i18n="nav.color_palette.main">Formation</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-calendar"></i><span class="menu-title" data-i18n="nav.event_calendars.main">Event Calendars</span></a>
-
-                    </li>
-                {% elseif is_granted('ROLE_SM') %}
-                    <li class=" nav-item"><a href="{{ path('homepage') }}"><i class="icon-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('Sprintv')}}"><i class="icon-film"></i><span class="menu-title" data-i18n="nav.users.main">Sprint</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('user_story')}}"><i class="icon-briefcase"></i><span class="menu-title" data-i18n="nav.project.main">User Story</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('aff_tache')}}"><i class="icon-screen-tablet"></i><span class="menu-title" data-i18n="nav.templates.main">Tache</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('afficher_tache_sm') }}"><i class="icon-note"></i><span class="menu-title" data-i18n="nav.templates.main">Tableau Blanc</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('ajoutersp') }}"><i class="icon-book-open"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Sprint Review</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{path('ajoutsr')}}"><i class="icon-share-alt"></i><span class="menu-title" data-i18n="nav.navbars.main">Sprint Retrospective</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('forum_homepage') }}"><i class="icon-bubbles"></i><span class="menu-title" data-i18n="nav.footers.main">Forum</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-graph"></i><span class="menu-title" data-i18n="nav.page_headers.main">BurndpwnChart</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-notebook"></i><span class="menu-title" data-i18n="nav.vertical_nav.main">Documents</span></a>
-
-                    </li>
-                {% elseif is_granted('ROLE_TEAM') %}
-                    <li class=" nav-item"><a href="{{ path('homepage') }}"><i class="icon-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('tache_team') }}"><i class="icon-screen-tablet"></i><span class="menu-title" data-i18n="nav.users.main">Taches</span></a>
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('afficher_tache_team') }}"><i class="icon-note"></i><span class="menu-title" data-i18n="nav.project.main">Tableau Blanc</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('backSM') }}"><i class="icon-notebook"></i><span class="menu-title" data-i18n="nav.templates.main">Document</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('ajoutdemande') }}"><i class="icon-list"></i><span class="menu-title" data-i18n="nav.templates.main">Conge</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="#"><i class="icon-envelope"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Reclamation</span></a>
-
-                    </li>
-                    <li class=" nav-item"><a href="{{ path('forum_homepage') }}"><i class="icon-bubbles"></i><span class="menu-title" data-i18n="nav.footers.main">Forum</span></a>
-
-                    </li>
-
-                {% endif %}
+                </li>
             </ul>
         </div>
     </div>
@@ -311,49 +219,194 @@
 
 <div class="app-content content">
     {% block content %}
+        welcome {{ app.user.username }}
+
+        <section id="basic-form-layouts">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="{{ path('user_story_add') }}" method="get">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="bordered-layout-basic-form">Creation des userstoryes</h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-content collpase show">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <p>vous deverez dabord choisir le sprint associé</p>
+                                    </div>
+
+                                    <div class="form-body">
+                                        <h4 class="form-section"><i class="ft-clipboard"></i> ajout userstory</h4>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 label-control" for="projectinput1">Sprint associé</label>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <select class="form-control" id="basicSelect" name="ids">
+                                                        <option>Select sprint</option>
+                                                        {% for forums in b %}
+                                                            <option value= {{ forums.id_sprint }}> {{ forums.description }}</option>
+                                                        {%  endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-md-3 label-control" for="projectinput1">UserStory associé</label>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <fieldset class="form-group">
+
+                                                        <select class="form-control" id="countrySelect" multiple="multiple" name="userst">
+                                                            {% for forums in c %}
+                                                                <option>{{ forums.user_story_bp }}</option>
+                                                            {%  endfor %}
+                                                        </select>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-check-square-o"></i> Save
+                                    </button>
+
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="basic-form-layouts">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="bordered-layout-basic-form">affichage</h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-content collpase show">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <p>aff</p>
+                                        <h4 class="form-section"><i class="ft-clipboard"></i> affichage</h4>
+                                    </div>
+
+
+                                    <div class="table-responsive">
+                                        <table  class="table table-striped table-bordered selection-multiple-rows" class="table table-striped table-bordered dataex-html5-message">
+                                            <thead class="thead-dark" >
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Sprint</th>
+                                                <th scope="col">description</th>
+                                                <th scope="col">action</th>
+                                                <th scope="col">tasks</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                {% for forums in a %}
+                                                <td scope="row">{{forums.id_user_story_bs }}</td>
+                                                <td>{{forums.description }}</td>
+                                                <td>{{forums.description_user_story_bs }}</td>
+
+                                                <td> <section id="button-shadow">
+                                                        <a class="btn btn-info btn-min-width box-shadow-3 mr-1 mb-1"   href="{{ path('user_story_update',{'id':forums.id_user_story_bs ,'desc1':forums.description,'desc2':forums.description_user_story_bs}) }}" >Edit</a>
+                                                        <a class="btn btn-danger btn-min-width box-shadow-5 mr-1 mb-1"   href="{{ path('delete_us',{'id':forums.id_user_story_bs}) }}" >Delete</a>
+                                                    </section> </td>
+                                                <td>
+                                                        <a class="btn btn-primary btn-sm" href="{{ path('go_tache',{'id':forums.id_user_story_bs}) }}"><i class="ft-plus white" ></i> New Task</a>
+                                                </td>
+                                            </tr>
+                                            {%  endfor %}
+
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+
     {% endblock %}
 </div>
 
 
 
 
-
+<!-- ////////////////////////////////////////////////////////////////////////////-->
 {% block footer %}
 
 <footer class="footer footer-static footer-light navbar-border">
     <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">Copyright  &copy; 2020 <a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">WEMANAGE </a>, All rights reserved. </span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Hand-crafted & Made with <i class="ft-heart pink"></i></span></p>
 </footer>
-{% endblock  %}
 
-{% block script %}
+<!-- BEGIN VENDOR JS-->
 <script src="{{ asset('back/app-assets/vendors/js/vendors.min.js') }}"></script>
-<script src="{{ asset('back/wapp-assets/vendors/js/charts/raphael-min.js') }}"></script>
-<script src="{{ asset('back/app-assets/vendors/js/charts/morris.min.js') }}"></script>
-<script src="{{ asset('back/app-assets/vendors/js/charts/chart.min.js') }}"></script>
-<script src="{{ asset('back/app-assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js') }}"></script>
-<script src="{{ asset('back/app-assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js') }}"></script>
-<script src="{{ asset('back/app-assets/vendors/js/extensions/moment.min.js') }}"></script>
-<script src="{{ asset('back/app-assets/vendors/js/extensions/underscore-min.js') }}"></script>
-<script src="{{ asset('back/app-assets/vendors/js/extensions/clndr.min.js') }}"></script>
-<script src="{{ asset('back/app-assets/vendors/js/extensions/unslider-min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/jszip.min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/buttons.colVis.min.js') }}"></script>
-    <script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
 
+<script src="{{ asset('back/app-assets/vendors/js/ui/jquery.sticky.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/datatables.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/jszip.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/pdfmake.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/vfs_fonts.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/buttons.print.min.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/tables/buttons.colVis.min.js') }}"></script>
+
+
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN ROBUST JS-->
 <script src="{{ asset('back/app-assets/js/core/app-menu.js') }}"></script>
 <script src="{{ asset('back/app-assets/js/core/app.js') }}"></script>
-
+<!-- END ROBUST JS-->
+<!-- BEGIN PAGE LEVEL JS-->
 <script src="{{ asset('back/app-assets/js/scripts/pages/dashboard-ecommerce.js') }}"></script>
-    <script src="{{ asset('back/app-assets/js/scripts/tables/datatables-extensions/datatable-button/datatable-html5.js') }}"></script>
-    <script src="{{ asset('back/app-assets/js/scripts/tables/datatables/datatable-api.js') }}"></script>
-{% endblock %}
+<script src="{{ asset('back/app-assets/js/scripts/tables/datatables/datatable-api.js') }}"></script>
+<script src="{{ asset('back/app-assets/js/scripts/tables/datatables-extensions/datatable-button/datatable-html5.js') }}"></script>
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
+<script src="{{ asset('back/app-assets/vendors/js/extensions/wNumb.js') }}"></script>
+<script src="{{ asset('back/app-assets/vendors/js/extensions/nouislider.min.js')}}"></script>
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN ROBUST JS-->
+<script src="{{ asset('back/app-assets/js/core/app-menu.js')}}"></script>
+<script src="{{ asset('back/app-assets/js/core/app.js') }}"></script>
+<!-- END ROBUST JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<script src="{{ asset('back/app-assets/js/scripts/extensions/noui-slider.js') }}"></script>
+<!-- END PAGE LEVEL JS-->
 </body>
-
 </html>
+{% endblock %}

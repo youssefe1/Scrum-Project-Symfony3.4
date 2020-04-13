@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new FOS\MessageBundle\FOSMessageBundle(),
             new DocDocDoc\NexmoBundle\DocDocDocNexmoBundle(),
             new RhBundle\RhBundle(),
+            new BSBundle\BSBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

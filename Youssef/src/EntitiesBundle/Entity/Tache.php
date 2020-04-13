@@ -26,16 +26,16 @@ class Tache
     /**
      * @var string
      *
-     * @ORM\Column(name="id_Sprint", type="string", length=45, nullable=true)
+     * @ORM\Column(name="priotity", type="string", length=45, nullable=true)
      */
-    private $idSprint = 'NULL';
+    private $priotity = 'NULL';
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="date_debut_tache", type="string", length=50, nullable=true)
+     * @ORM\Column(name="progress", type="integer", length=50, nullable=true)
      */
-    private $dateDebutTache = 'NULL';
+    private $progress = 'NULL';
 
     /**
      * @var string
@@ -128,33 +128,33 @@ class Tache
     /**
      * @return string
      */
-    public function getIdSprint()
+    public function getpriotity()
     {
-        return $this->idSprint;
+        return $this-priotity;
     }
 
     /**
-     * @param string $idSprint
+     * @param string $priotity
      */
-    public function setIdSprint($idSprint)
+    public function sepriotity($priotity)
     {
-        $this->idSprint = $idSprint;
+        $this->priotity = $priotity;
     }
 
     /**
      * @return string
      */
-    public function getDateDebutTache()
+    public function progress()
     {
-        return $this->dateDebutTache;
+        return $this->progress;
     }
 
     /**
-     * @param string $dateDebutTache
+     * @param string $progress
      */
-    public function setDateDebutTache($dateDebutTache)
+    public function setprogress($progress)
     {
-        $this->dateDebutTache = $dateDebutTache;
+        $this->progress= $progress;
     }
 
     /**

@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="backlog_sprint", indexes={@ORM\Index(name="id_equipe", columns={"id_equipe"}), @ORM\Index(name="id_projet", columns={"id_projet"}), @ORM\Index(name="id_sm", columns={"id_sm"})})
  * @ORM\Entity
  */
+
 class BacklogSprint
 {
     /**
@@ -49,15 +50,91 @@ class BacklogSprint
     private $idProjet;
 
     /**
-     * @var User
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_sm", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="id_Sm", type="integer", nullable=true)
+     *
      */
     private $idSm;
 
+    /**
+     * @return int
+     */
+    public function getIdBs()
+    {
+        return $this->idBs;
+    }
 
+    /**
+     * @param int $idBs
+     */
+    public function setIdBs($idBs)
+    {
+        $this->idBs = $idBs;
+    }
+
+    /**
+     * @return int
+     */
+    public function getListeSprint()
+    {
+        return $this->listeSprint;
+    }
+
+    /**
+     * @param int $listeSprint
+     */
+    public function setListeSprint($listeSprint)
+    {
+        $this->listeSprint = $listeSprint;
+    }
+
+    /**
+     * @return \Equipe
+     */
+    public function getIdEquipe()
+    {
+        return $this->idEquipe;
+    }
+
+    /**
+     * @param \Equipe $idEquipe
+     */
+    public function setIdEquipe($idEquipe)
+    {
+        $this->idEquipe = $idEquipe;
+    }
+
+    /**
+     * @return \Projets
+     */
+    public function getIdProjet()
+    {
+        return $this->idProjet;
+    }
+
+    /**
+     * @param \Projets $idProjet
+     */
+    public function setIdProjet($idProjet)
+    {
+        $this->idProjet = $idProjet;
+    }
+
+    /**
+     * @return \Sm
+     */
+    public function getIdSm()
+    {
+        return $this->idSm;
+    }
+
+    /**
+     * @param \Sm $idSm
+     */
+    public function setIdSm($idSm)
+    {
+        $this->idSm = $idSm;
+    }
 }
 

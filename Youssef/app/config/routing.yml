@@ -1,3 +1,7 @@
+bs:
+    resource: "@BSBundle/Resources/config/routing.yml"
+    prefix:   /bs
+
 rh:
     resource: "@RhBundle/Resources/config/routing.yml"
     prefix:   /rh
