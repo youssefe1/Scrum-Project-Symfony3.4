@@ -1,4 +1,0 @@
-services:
-#    entities.example:
-#        class: EntitiesBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
